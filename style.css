@@ -1,0 +1,82 @@
+/*Cards and hover effects*/
+.card {
+  width: 50%;
+  height: 281px; /* Suma de la altura de la imagen y la franja azul */
+  position: relative;
+  overflow: hidden;
+  border-radius: 9px;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.3s ease;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 9px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.blue-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 58px;
+  border-radius: 0px 0px 9px 9px;
+  background-color: #187EE9;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.card:hover .blue-bar {
+  height: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2; /* Ajustamos el índice z */
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3 {
+  color: #023357;
+  font-family: Commissioner !!important;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21.6px;
+  margin: 0;
+}
+
+.blue-bar p {
+  color: white;
+  text-align: center;
+  line-height: 51px !important;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+/* Container for the cards */
+.card-container {
+  display: flex;
+  gap: 10px; /* Optional: space between the cards */
+}
